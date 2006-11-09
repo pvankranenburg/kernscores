@@ -1,0 +1,10 @@
+19: begin bar 5 voices
+34: 4 voices in manual - transcription not totally correct.
+42: confusion between voice 2 and 3
+49: let voice 3 start
+53: again 4 voices in man.
+63: confusion 3 and 4
+74/5: 2 and 3 cross...
+80: 4: made 2g -> 4.g
+88: 4r missing
+127: 5 voices. 4E- -> 8E-	

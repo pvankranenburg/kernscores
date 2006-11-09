@@ -1,0 +1,12 @@
+Decision about which notes in pedal of Brandts Buys
+
+mt12: five voices in manual
+mt31: fifth voice enters on top???
+mt31: g' omitted
+mt35: e'' -> e-''
+mt36: again!
+mt39-41: stupid bass
+mt42: again: in encoding entire theme is not in one voice now.
+mt55-57: voice 3 becomes voice 2
+mt73-77: c omitted
+mt81-end: pedal and lowest voice in manual are doubled in Brandt Buys. One voice omitted.

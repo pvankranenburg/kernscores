@@ -1,0 +1,8 @@
+mt43	kleine nootjes van Bach?
+mt66	op eerste tel vijfstemmig
+mt68	toevoeging van Bach?
+mt70	idem
+mt88	versiering?
+mt96	trillers?
+mt172	wordt vijfstemmig
+mt173	noodgedwongen d# en a'' samen
