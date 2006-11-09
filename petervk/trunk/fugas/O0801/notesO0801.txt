@@ -1,0 +1,9 @@
+accidentals in parentheses not used!
+10: strange connection 3->2
+18: note
+26: connection 2->3
+38; prallers omitted
+41; connection 3->2
+51: 
+57: triller weg
+63: slotakkoord uitgedund: 5
