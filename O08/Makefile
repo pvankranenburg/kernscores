@@ -3,11 +3,11 @@ kernfile: prekern
 	timebase -t 32 2.krn > 2-32.krn
 	timebase -t 32 3.krn > 3-32.krn
 	timebase -t 32 4.krn > 4-32.krn
-	paste 1-32.krn 2-32.krn 3-32.krn 4-32.krn > O08-temp.krn
+	paste 1-32.krn 2-32.krn 3-32.krn 4-32.krn > O08C-temp.krn
 	rm 1-32.krn 2-32.krn 3-32.krn 4-32.krn
-	rid -d O08-temp.krn > O08.krn
-	rm O08-temp.krn
-	proof O08.krn
+	rid -d O08C-temp.krn > O08C.krn
+	rm O08C-temp.krn
+	proof O08C.krn
 
 prekern:
 	prekern 1.pk
@@ -22,23 +22,23 @@ proof: prekern
 	proof 4.krn
 
 testmidi: kernfile
-	yank -o ^= -r '$$-10-$$' O08.krn > O08-test.krn
-	midi -u -q 90 < O08-test.krn > O08-test.hmd
-	hmd2mid O08-test.hmd
-	rm O08-test.hmd
+	yank -o ^= -r '$$-10-$$' O08C.krn > O08C-test.krn
+	midi -u -q 90 < O08C-test.krn > O08C-test.hmd
+	hmd2mid O08C-test.hmd
+	rm O08C-test.hmd
 
 midi: kernfile
-	midi -u -q 90 < O08.krn > O08.hmd
-	hmd2mid O08.hmd
-	rm O08.hmd
+	midi -u -q 90 < O08C.krn > O08C.hmd
+	hmd2mid O08C.hmd
+	rm O08C.hmd
 
 play: midi
-	timidity O08.mid
-	/Applications/MPlayer\ OSX.app/Contents/Resources/External_Binaries/mplayer.app/Contents/MacOS/mplayer O08.wav
+	timidity O08C.mid
+	/Applications/MPlayer\ OSX.app/Contents/Resources/External_Binaries/mplayer.app/Contents/MacOS/mplayer O08C.wav
 
 testplay: testmidi
-	timidity O08-test.mid
-	/Applications/MPlayer\ OSX.app/Contents/Resources/External_Binaries/mplayer.app/Contents/MacOS/mplayer O08-test.wav
+	timidity O08C-test.mid
+	/Applications/MPlayer\ OSX.app/Contents/Resources/External_Binaries/mplayer.app/Contents/MacOS/mplayer O08C-test.wav
 
 clean:
 	rm *.krn
