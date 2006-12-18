@@ -33,12 +33,10 @@ midi: kernfile
 	rm O0806.hmd
 
 play: midi
-	timidity O0806.mid
-	/Applications/MPlayer\ OSX.app/Contents/Resources/External_Binaries/mplayer.app/Contents/MacOS/mplayer O0806.wav
+	timidity -in O0806.mid
 
 testplay: testmidi
-	timidity O0806-test.mid
-	/Applications/MPlayer\ OSX.app/Contents/Resources/External_Binaries/mplayer.app/Contents/MacOS/mplayer O0806-test.wav
+	timidity -in O0806-test.mid
 
 clean:
 	rm *.krn

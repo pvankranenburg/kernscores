@@ -1,4 +1,4 @@
-kernfile: prekern
+basename =kernfile: prekern
 	timebase -t 64 1.krn > 1-32.krn
 	timebase -t 64 2.krn > 2-32.krn
 	timebase -t 64 3.krn > 3-32.krn
