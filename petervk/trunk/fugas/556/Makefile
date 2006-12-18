@@ -1,4 +1,19 @@
+COM = "Bach, Johann Sebastian \(disputed\)"
+OTL = "Fuga"
+OMV = "2"
+SCT = "BWV 556"
+SCA = "Thematisches-systematisches Verzeichnis der musikalischen Werke von Johann Sebastian Bach \(Schmieder 1990\)"
+ENC = "Peter van Kranenburg \(peter@musical-style-recognition.net\)"
+END = `getdatemodified 1.pk`
+
+basename = bwv556
+
 kernfile: prekern
+	echo "!!!COM: $(COM)" > $(basename).krn
+	echo "!!!OTL: $(OTL)" >> $(basename).krn
+	echo "!!!OMV: $(OMV)" >> $(basename).krn
+	echo "!!!SCT: $(SCT)" >> $(basename).krn
+	echo "!!!SCA: $(SCA)" >> $(basename).krn
 	timebase -t 32 1.krn > 1-32.krn
 	timebase -t 32 2.krn > 2-32.krn
 	timebase -t 32 3.krn > 3-32.krn
@@ -6,9 +21,11 @@ kernfile: prekern
 	timebase -t 32 5.krn > 5-32.krn
 	paste 1-32.krn 2-32.krn 3-32.krn 4-32.krn 5-32.krn > bwv556-temp.krn
 	rm 1-32.krn 2-32.krn 3-32.krn 4-32.krn 5-32.krn
-	rid -d bwv556-temp.krn > bwv556.krn
+	rid -d bwv556-temp.krn >> bwv556.krn
 	rm bwv556-temp.krn
 	proof bwv556.krn
+	echo "!!!ENC: $(ENC)" >> $(basename).krn
+	echo "!!!END: $(END)" >> $(basename).krn
 
 prekern:
 	prekern 1.pk
