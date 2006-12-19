@@ -1,4 +1,19 @@
+COM = "Kellner, Johann Ludwig"
+OTL = "Fuga"
+OMV = "2"
+SCT = "O08:01"
+SCA = "Rolf Dietrich Claus, Johann Peter Kellner - Studien zu Leben und Werk."
+ENC = "Peter van Kranenburg \(peter@musical-style-recognition.net\)"
+END = `getdatemodified 1.pk`
+
+basename = O0801
+
 kernfile: prekern
+	echo "!!!COM: $(COM)" > $(basename).krn
+	echo "!!!OTL: $(OTL)" >> $(basename).krn
+	echo "!!!OMV: $(OMV)" >> $(basename).krn
+	echo "!!!SCT: $(SCT)" >> $(basename).krn
+	echo "!!!SCA: $(SCA)" >> $(basename).krn
 	timebase -t 32 1.krn > 1-32.krn
 	timebase -t 32 2.krn > 2-32.krn
 	timebase -t 32 3.krn > 3-32.krn
@@ -6,9 +21,11 @@ kernfile: prekern
 	timebase -t 32 5.krn > 5-32.krn
 	paste 1-32.krn 2-32.krn 3-32.krn 4-32.krn 5-32.krn > O0801-temp.krn
 	rm 1-32.krn 2-32.krn 3-32.krn 4-32.krn 5-32.krn
-	rid -d O0801-temp.krn > O0801.krn
+	rid -d O0801-temp.krn >> O0801.krn
 	rm O0801-temp.krn
 	proof O0801.krn
+	echo "!!!ENC: $(ENC)" >> $(basename).krn
+	echo "!!!END: $(END)" >> $(basename).krn
 
 prekern:
 	prekern 1.pk

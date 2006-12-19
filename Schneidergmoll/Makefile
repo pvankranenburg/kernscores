@@ -1,14 +1,26 @@
+COM = "Schneider, Johann"
+OTL = "Fuga"
+OMV = "2"
+ENC = "Peter van Kranenburg \(peter@musical-style-recognition.net\)"
+END = `getdatemodified 1.pk`
+
+basename = Schneidergmoll
+
 kernfile: prekern
+	echo "!!!COM: $(COM)" > $(basename).krn
+	echo "!!!OTL: $(OTL)" >> $(basename).krn
+	echo "!!!OMV: $(OMV)" >> $(basename).krn
 	timebase -t 32 1.krn > 1-32.krn
 	timebase -t 32 2.krn > 2-32.krn
 	timebase -t 32 3.krn > 3-32.krn
 	timebase -t 32 4.krn > 4-32.krn
 	paste 1-32.krn 2-32.krn 3-32.krn 4-32.krn > Schneidergmoll-temp.krn
 	rm 1-32.krn 2-32.krn 3-32.krn 4-32.krn
-	rid -d Schneidergmoll-temp.krn > Schneidergmoll.krn
-	#cp Schneidergmoll-temp.krn FriedenmannII.krn
+	rid -d Schneidergmoll-temp.krn >> Schneidergmoll.krn
 	rm Schneidergmoll-temp.krn
 	proof Schneidergmoll.krn
+	echo "!!!ENC: $(ENC)" >> $(basename).krn
+	echo "!!!END: $(END)" >> $(basename).krn
 
 prekern:
 	prekern 1.pk

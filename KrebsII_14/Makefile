@@ -1,13 +1,28 @@
+COM = "Krebs, Johann Ludwig"
+OTL = "Fuga"
+SCT = "II.14"
+SCA = "Johann Ludwig Krebs, Sämtliche Orgelwerke. Herausgegeven von Gerhard Weinberger."
+ENC = "Peter van Kranenburg \(peter@musical-style-recognition.net\)"
+END = `getdatemodified 1.pk`
+
+basename = KrebsII_14
+
 kernfile: prekern
+	echo "!!!COM: $(COM)" > $(basename).krn
+	echo "!!!OTL: $(OTL)" >> $(basename).krn
+	echo "!!!SCT: $(SCT)" >> $(basename).krn
+	echo "!!!SCA: $(SCA)" >> $(basename).krn
 	timebase -t 64 1.krn > 1-32.krn
 	timebase -t 64 2.krn > 2-32.krn
 	timebase -t 64 3.krn > 3-32.krn
 	timebase -t 64 4.krn > 4-32.krn
 	paste 1-32.krn 2-32.krn 3-32.krn 4-32.krn > KrebsII_14-temp.krn
 	rm 1-32.krn 2-32.krn 3-32.krn 4-32.krn
-	rid -d KrebsII_14-temp.krn > KrebsII_14.krn
+	rid -d KrebsII_14-temp.krn >> KrebsII_14.krn
 	rm KrebsII_14-temp.krn
 	proof KrebsII_14.krn
+	echo "!!!ENC: $(ENC)" >> $(basename).krn
+	echo "!!!END: $(END)" >> $(basename).krn
 
 prekern:
 	prekern 1.pk
