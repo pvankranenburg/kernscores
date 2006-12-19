@@ -1,8 +1,12 @@
+!!!COM: Kellner, Johann Ludwig
+!!!OTL: Fuga
+!!!SCT: O10:02
+!!!SCA: Rolf Dietrich Claus, Johann Peter Kellner - Studien zu Leben und Werk.
 **kern	**kern	**kern	**kern
 *MM60	*MM60	*MM60	*MM60
 *k[]	*k[]	*k[]	*k[]
 *M4/4	*M4/4	*M4/4	*M4/4
-*tb64	*tb64	*tb64	*tb64
+*tb32	*tb32	*tb32	*tb32
 =1	=1	=1	=1
 1r	1r	8r	1r
 .	.	8d	.
@@ -1282,3 +1286,5 @@
 2dd	2f# 2a	2D 2A	2DD
 ==	==	==	==
 *-	*-	*-	*-
+!!!ENC: Peter van Kranenburg (peter@musical-style-recognition.net)
+!!!END: 2006-11-15
