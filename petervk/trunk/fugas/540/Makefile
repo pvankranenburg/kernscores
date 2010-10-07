@@ -20,7 +20,7 @@ kernfile: prekern
 	timebase -t 32 4.krn > 4-32.krn
 	paste 1-32.krn 2-32.krn 3-32.krn 4-32.krn > bwv540-temp.krn
 	rm 1-32.krn 2-32.krn 3-32.krn 4-32.krn
-	rid -d bwv540-temp.krn >> bwv540.krn
+	//rid -d bwv540-temp.krn >> bwv540.krn
 	rm bwv540-temp.krn
 	proof bwv540.krn
 	echo "!!!ENC: $(ENC)" >> $(basename).krn
