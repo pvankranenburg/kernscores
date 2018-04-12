@@ -1,0 +1,2 @@
+bar 77, beat 4, alto, 4c# in score -> 8c#
+bar 90, beat 1, alto, 2r not in score
