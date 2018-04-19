@@ -44,7 +44,7 @@ midi: kernfile
 
 testmidi: kernfile
 	#myank -m '$$18-$$' Sweelinck_Chromatica.krn > Sweelinck_Chromatica-test.krn
-	myank -m '196-$$' Sweelinck_Chromatica.krn > Sweelinck_Chromatica-test.krn
+	myank -m '164-$$' Sweelinck_Chromatica.krn > Sweelinck_Chromatica-test.krn
 	hum2mid -o Sweelinck_Chromatica-test.mid Sweelinck_Chromatica-test.krn
 
 testplay: testmidi
