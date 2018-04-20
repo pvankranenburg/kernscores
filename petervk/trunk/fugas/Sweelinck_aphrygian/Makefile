@@ -1,5 +1,5 @@
 COM = "Jan Pieterszn Sweelinck"
-OTL = "Fantasia (A-phrygian)"
+OTL = "Fantasia A-phrygian"
 OMV = ""
 SCT = ""
 SCA = ""
@@ -23,7 +23,7 @@ kernfile: prekern
 	rm 1-32.krn 2-32.krn 3-32.krn 4-32.krn
 	rid -d Sweelinck_aphrygian-temp.krn >> Sweelinck_aphrygian.krn
 	rm Sweelinck_aphrygian-temp.krn
-	proof Sweelinck_aphrygian.krn
+	proof Sweelinck_aphrygian.krn | grep -v "identical to measure"
 	echo "!!!ENC: $(ENC)" >> $(basename).krn
 	echo "!!!END: $(END)" >> $(basename).krn
 
@@ -42,9 +42,12 @@ proof: prekern
 midi: kernfile
 	hum2mid -o Sweelinck_aphrygian.mid Sweelinck_aphrygian.krn
 
+test: kernfile
+	proof Sweelinck_aphrygian.krn | head | grep -v "identical to measure"
+
 testmidi: kernfile
 	#myank -m '$$18-$$' Sweelinck_aphrygian.krn > Sweelinck_aphrygian-test.krn
-	myank -m '1-$$' Sweelinck_aphrygian.krn > Sweelinck_aphrygian-test.krn
+	myank -m '38-$$' Sweelinck_aphrygian.krn > Sweelinck_aphrygian-test.krn
 	hum2mid -o Sweelinck_aphrygian-test.mid Sweelinck_aphrygian-test.krn
 
 testplay: testmidi
