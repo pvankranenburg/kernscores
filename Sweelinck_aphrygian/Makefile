@@ -47,7 +47,7 @@ test: kernfile
 
 testmidi: kernfile
 	#myank -m '$$18-$$' Sweelinck_aphrygian.krn > Sweelinck_aphrygian-test.krn
-	myank -m '38-$$' Sweelinck_aphrygian.krn > Sweelinck_aphrygian-test.krn
+	myank -m '272-$$' Sweelinck_aphrygian.krn > Sweelinck_aphrygian-test.krn
 	hum2mid -o Sweelinck_aphrygian-test.mid Sweelinck_aphrygian-test.krn
 
 testplay: testmidi
