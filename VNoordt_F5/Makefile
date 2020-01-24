@@ -43,7 +43,7 @@ midi: kernfile
 	hum2mid -o VNoordt_F5.mid VNoordt_F5.krn
 
 testmidi: kernfile
-	myank -m '84-$$' VNoordt_F5.krn > VNoordt_F5-test.krn
+	myank -m '90-$$' VNoordt_F5.krn > VNoordt_F5-test.krn
 	hum2mid -o VNoordt_F5-test.mid VNoordt_F5-test.krn
 
 testplay: testmidi
