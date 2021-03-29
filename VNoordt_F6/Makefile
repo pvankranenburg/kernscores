@@ -50,7 +50,7 @@ testplay: testmidi
 	timidity VNoordt_F6-test.mid
 
 play: midi
-	timidity VNoordt_F6.mid
+	timidity -T VNoordt_F6.mid
 
 clean:
 	rm *.krn
